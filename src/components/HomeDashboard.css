@@ -1,0 +1,539 @@
+.home-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 0;
+}
+
+.dashboard-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2d3748;
+}
+
+.logo-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #667eea;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info {
+  text-align: right;
+}
+
+.username {
+  display: block;
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 1rem;
+}
+
+.user-stats {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.level {
+  background: #667eea;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.xp {
+  background: #f7fafc;
+  color: #4a5568;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.profile-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.profile-btn:hover {
+  background: #f7fafc;
+}
+
+.profile-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #4a5568;
+}
+
+.dashboard-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.welcome-section h1 {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  color: #718096;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quest-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.quest-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.quest-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.quest-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.quest-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.quest-icon {
+  font-size: 2.5rem;
+}
+
+.quest-difficulty {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.quest-card-content h3 {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.quest-card-content p {
+  color: #718096;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.quest-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+.quest-card-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.start-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.start-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+/* Quest Theme Styles */
+.quest-card--soul90s {
+  background: 
+    linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffd700" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #ffd700;
+  box-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.3),
+    inset 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+.quest-card--soul90s::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 165, 0, 0.1) 0%, transparent 50%);
+  animation: retro-pulse 4s ease-in-out infinite;
+}
+
+.quest-card--soul90s .quest-icon {
+  font-size: 3rem;
+  color: #ffd700;
+  text-shadow: 
+    0 0 5px #ffd700,
+    0 0 10px #ffd700,
+    0 0 15px #ffd700,
+    2px 2px 0px #8b4513;
+  animation: retro-bounce 2s ease-in-out infinite;
+}
+
+.quest-card--soul90s h3 {
+  color: #ffd700;
+  font-weight: 800;
+  text-shadow: 
+    2px 2px 0px #8b4513,
+    4px 4px 0px #654321;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+.quest-card--soul90s p {
+  color: #f0f0f0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.quest-card--soul90s .start-btn {
+  background: linear-gradient(45deg, #ffd700, #ff8c00);
+  color: #2c3e50;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid #8b4513;
+  box-shadow: 
+    0 4px 0px #8b4513,
+    0 6px 10px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', monospace;
+}
+
+.quest-card--soul90s .start-btn:hover {
+  transform: translateY(2px);
+  box-shadow: 
+    0 2px 0px #8b4513,
+    0 4px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #ffed4e, #ffa500);
+}
+
+@keyframes retro-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes retro-bounce {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Chalga Theme Styles - Кичозен дизайн */
+.quest-card--chalga {
+  background: 
+    linear-gradient(135deg, #ff1493 0%, #ff69b4 25%, #ffd700 50%, #ff6347 75%, #ff1493 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="sparkles" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="%23ffffff" opacity="0.8"/><circle cx="5" cy="5" r="1" fill="%23ffd700" opacity="0.6"/><circle cx="15" cy="15" r="1.5" fill="%23ff69b4" opacity="0.7"/></pattern></defs><rect width="100" height="100" fill="url(%23sparkles)"/></svg>');
+  position: relative;
+  overflow: hidden;
+  border: 4px solid #ffd700;
+  box-shadow: 
+    0 0 30px rgba(255, 20, 147, 0.5),
+    inset 0 0 30px rgba(255, 215, 0, 0.2);
+  animation: chalga-glow 3s ease-in-out infinite;
+}
+
+.quest-card--chalga::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 70%, rgba(255, 215, 0, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(255, 20, 147, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 105, 180, 0.2) 0%, transparent 70%);
+  animation: chalga-sparkle 2s ease-in-out infinite;
+}
+
+.quest-card--chalga .quest-icon {
+  font-size: 3.5rem;
+  color: #ffd700;
+  text-shadow: 
+    0 0 10px #ff1493,
+    0 0 20px #ff69b4,
+    0 0 30px #ffd700,
+    3px 3px 0px #ff6347;
+  animation: chalga-bounce 1.5s ease-in-out infinite;
+}
+
+.quest-card--chalga h3 {
+  color: #ff1493;
+  font-weight: 900;
+  text-shadow: 
+    3px 3px 0px #ffd700,
+    6px 6px 0px #ff69b4,
+    9px 9px 0px #ff6347;
+  font-family: 'Arial Black', sans-serif;
+  letter-spacing: 2px;
+  animation: chalga-text-glow 2s ease-in-out infinite alternate;
+}
+
+.quest-card--chalga p {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+}
+
+.quest-card--chalga .start-btn {
+  background: linear-gradient(45deg, #ff1493, #ffd700, #ff69b4);
+  color: #ffffff;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 3px solid #ffd700;
+  box-shadow: 
+    0 6px 0px #ff6347,
+    0 8px 15px rgba(255, 20, 147, 0.6);
+  font-family: 'Arial Black', sans-serif;
+  animation: chalga-button-pulse 2s ease-in-out infinite;
+}
+
+.quest-card--chalga .start-btn:hover {
+  transform: translateY(3px);
+  box-shadow: 
+    0 3px 0px #ff6347,
+    0 5px 10px rgba(255, 20, 147, 0.8);
+  background: linear-gradient(45deg, #ff69b4, #ffed4e, #ff1493);
+}
+
+@keyframes chalga-glow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 30px rgba(255, 20, 147, 0.5),
+      inset 0 0 30px rgba(255, 215, 0, 0.2);
+  }
+  50% { 
+    box-shadow: 
+      0 0 50px rgba(255, 20, 147, 0.8),
+      inset 0 0 50px rgba(255, 215, 0, 0.4);
+  }
+}
+
+@keyframes chalga-sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+@keyframes chalga-bounce {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(5deg); }
+  75% { transform: translateY(-5px) rotate(-3deg); }
+}
+
+@keyframes chalga-text-glow {
+  0% { 
+    text-shadow: 
+      3px 3px 0px #ffd700,
+      6px 6px 0px #ff69b4,
+      9px 9px 0px #ff6347;
+  }
+  100% { 
+    text-shadow: 
+      3px 3px 0px #ffd700,
+      6px 6px 0px #ff69b4,
+      9px 9px 0px #ff6347,
+      0 0 20px #ff1493;
+  }
+}
+
+@keyframes chalga-button-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes neon-glow {
+  0% { 
+    text-shadow: 0 0 10px #ff6b9d, 0 0 20px #ff6b9d, 0 0 30px #ff6b9d;
+    transform: scale(1);
+  }
+  100% { 
+    text-shadow: 0 0 20px #ff6b9d, 0 0 30px #ff6b9d, 0 0 40px #ff6b9d;
+    transform: scale(1.1);
+  }
+}
+
+.quest-card--colorful {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.quest-card--urban {
+  background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+}
+
+.quest-card--romance {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.quest-card--teamBattle {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.quest-card--teamBattle h3,
+.quest-card--teamBattle p,
+.quest-card--teamBattle .quest-meta {
+  color: white;
+}
+
+.quick-actions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.quick-action-btn {
+  background: white;
+  border: 2px solid #e2e8f0;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #4a5568;
+  transition: all 0.3s ease;
+  min-width: 150px;
+  justify-content: center;
+}
+
+.quick-action-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.action-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 1rem;
+  }
+  
+  .dashboard-main {
+    padding: 1rem;
+  }
+  
+  .welcome-section h1 {
+    font-size: 2rem;
+  }
+  
+  .welcome-section p {
+    font-size: 1rem;
+  }
+  
+  .quest-categories {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .quest-card {
+    padding: 1.5rem;
+  }
+  
+  .quick-actions {
+    gap: 1rem;
+  }
+  
+  .quick-action-btn {
+    min-width: 120px;
+    padding: 0.75rem 1.5rem;
+  }
+}
